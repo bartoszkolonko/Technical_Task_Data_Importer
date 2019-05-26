@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Technical_Task_Data_Importer.Entities;
 using System.IO;
+using Technical_Task_Data_Importer.Interfaces;
 
 namespace Technical_Task_Data_Importer
 {
-    public class JsonReader
+    public class JsonRepository
     {
        public static List<Lead> ReadData(string pathToFile)
         {

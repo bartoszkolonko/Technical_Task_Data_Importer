@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Technical_Task_Data_Importer", "Technical_Task_Data_Importer\Technical_Task_Data_Importer.csproj", "{A53F97A2-2F3E-4DD2-A781-5094343B5BAB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Technical_Task_Data_Importer.Tests", "Technical_Task_Data_Importer.Tests\Technical_Task_Data_Importer.Tests.csproj", "{107B5D16-1039-40E9-8C73-663D224685D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A53F97A2-2F3E-4DD2-A781-5094343B5BAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A53F97A2-2F3E-4DD2-A781-5094343B5BAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A53F97A2-2F3E-4DD2-A781-5094343B5BAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{107B5D16-1039-40E9-8C73-663D224685D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{107B5D16-1039-40E9-8C73-663D224685D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{107B5D16-1039-40E9-8C73-663D224685D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{107B5D16-1039-40E9-8C73-663D224685D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

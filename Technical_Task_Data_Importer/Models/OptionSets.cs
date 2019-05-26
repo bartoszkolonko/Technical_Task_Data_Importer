@@ -220,6 +220,18 @@ namespace CrmEarlyBound
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.0.0.9479")]
+	public enum Contact_new_riskofsigning
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Safe = 100000000,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Unsafe = 100000001,
+	}
+	
+	[System.Runtime.Serialization.DataContractAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.0.0.9479")]
 	public enum Contact_PaymentTermsCode
 	{
 		
