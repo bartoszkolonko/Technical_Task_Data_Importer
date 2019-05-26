@@ -25,6 +25,7 @@ namespace Technical_Task_Data_Importer
             ClientCredentials credentials = new ClientCredentials();
             credentials.UserName.UserName = ConfigurationManager.AppSettings["Username"];
             credentials.UserName.Password = ConfigurationManager.AppSettings["Password"];
+
             try
             {
                 using (_serviceProxy = new OrganizationServiceProxy(uri, null, credentials, null))
@@ -41,7 +42,6 @@ namespace Technical_Task_Data_Importer
             catch(Exception e)
             {
                 logger.Error(e.Message);
-
             }
         }
     }

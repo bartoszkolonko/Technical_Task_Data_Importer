@@ -16,10 +16,10 @@ namespace Technical_Task_Data_Importer
     {       
         static void Main(string[] args)
         {
-            IContactRepository contactRepo = new ContactRepository();          
+            IContactRepository contactRepo = new ContactRepository();
             List<Lead> leads = JsonRepository.ReadData(ConfigurationManager.AppSettings["ImportFilePath"]);
-            List <Contact> contactsToImport = new List<Contact>();
-            foreach(var lead in leads)
+            List<Contact> contactsToImport = new List<Contact>();
+            foreach (var lead in leads)
             {
                 Contact contact = contactRepo.PrepareRecord(lead);
                 contactsToImport.Add(contact);
@@ -28,15 +28,14 @@ namespace Technical_Task_Data_Importer
             DataImporter di = new DataImporter();
             di.RunImport(contactsToImport);
 
-            //List<Contact> contactsFromUsa = contactsToImport.Where(x => x.Address1_Country == "United States").ToList();
-            //string contactJson = JsonConvert.SerializeObject(contactsFromUsa);
-            //await ServiceBusSender.SendMessage(contactJson);
+            List<Contact> contactsFromFrance = contactsToImport.Where(x => x.Address1_Country == "France").ToList();
+            EmailSender emailSender = new EmailSender();
+            emailSender.SendEmail(contactsFromFrance);
 
-            //List<Contact> contactsFromFrance = contactsToImport.Where(x => x.Address1_Country == "France").ToList();
-            //EmailSender emailSender = new EmailSender();
-            //emailSender.SendEmail(contactsFromFrance);
-           
-            Console.ReadKey();
+            List<Contact> contactsFromUsa = contactsToImport.Where(x => x.Address1_Country == "United States").ToList();
+            string contactJson = JsonConvert.SerializeObject(contactsFromUsa);
+            ServiceBusSender sbSender = new ServiceBusSender();
+            sbSender.Runner(contactJson);
         }
     }
 }
